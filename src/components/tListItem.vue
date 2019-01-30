@@ -15,7 +15,7 @@ export default {
 <style lang="scss" scoped>
   .t-list-item {
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 8px 10px;
     display: flex;
     height: 85px;
     cursor: pointer;
@@ -27,6 +27,7 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     margin-right: 20px;
+    margin-top: 2px;
   }
 
   .t-about {
@@ -46,6 +47,8 @@ export default {
     height: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
+    word-wrap: unset;
+    white-space: nowrap;
   }
 
   .t-job {

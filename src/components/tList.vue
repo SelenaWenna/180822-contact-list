@@ -1,6 +1,11 @@
 <template lang="pug">
   div.t-list
-    input.t-search(v-model="searchQuery")
+    .t-search
+      .t-search__icon
+        include ../../public/search.svg
+      input.t-search__input(v-model="searchQuery")
+      .t-search__clear(v-if="searchQuery" @click="searchQuery=''")
+        include ../../public/clear.svg
     ul
       t-list-item(
         v-for="client in $store.getters.GETclients(searchQuery)"
@@ -32,8 +37,8 @@ export default {
 
 <style lang="scss" scoped>
   .t-list {
-    width: 35%;
-    min-width: 240px;
+    width: 330px;
+    min-width: 330px;
     text-align: left;
   }
 
@@ -41,14 +46,45 @@ export default {
     width: 100%;
     height: 50px;
     box-sizing: border-box;
-    background: url(/search.svg) no-repeat;
-    background-position: 10px;
-    background-size: 20px 20px;
-    padding: 10px 10px 10px 40px;
+    position: relative;
 
-    &:focus,
-    &:active {
-      outline: none;
+    &__input {
+      width: 100%;
+      height: 100%;
+      // background: url(/search.svg) no-repeat;
+      // background-position: 10px;
+      // background-size: 20px 20px;
+      padding: 10px 40px;
+      box-sizing: border-box;
+
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+
+    &__icon,
+    &__clear {
+      position: absolute;
+      top: 15px;
+      bottom: 15px;
+
+      & > svg {
+        width: 20px;
+        height: 20px;
+        fill: #aaa;
+      }
+    }
+
+    &__icon {
+      right: auto;
+      left: 10px;
+    }
+
+    &__clear {
+      cursor: pointer;
+      right: 10px;
+      left: auto;
     }
   }
 
