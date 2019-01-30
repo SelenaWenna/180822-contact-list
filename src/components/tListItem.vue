@@ -2,8 +2,8 @@
 li.t-list-item
   .t-avatar(:style="`background-image: url(${client.general.avatar})`")
   .t-about
-    .t-fio {{ client.general.firstName}} {{ client.general.lastName}}
-    .t-job {{ client.job.title}}
+    .t-about__fio {{ client.general.firstName}} {{ client.general.lastName}}
+    .t-about__job {{ client.job.title}}
 </template>
 
 <script>
@@ -32,26 +32,27 @@ export default {
 
 .t-about {
   max-width: calc(100% - 95px);
+
+  &__fio {
+    font-weight: 700;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    word-wrap: unset;
+    white-space: nowrap;
+  }
+
+  &__job {
+    max-height: 35px;
+    line-height: 1.1;
+  }
 }
 
 .t-list-item,
 .t-about,
-.t-fio,
-.t-job {
+.t-about__fio,
+.t-about__job {
   overflow: hidden;
   box-sizing: border-box;
-}
-
-.t-fio {
-  font-weight: 700;
-  height: 30px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  word-wrap: unset;
-  white-space: nowrap;
-}
-
-.t-job {
-  max-height: 35px;
 }
 </style>
