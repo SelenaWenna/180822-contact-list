@@ -1,7 +1,7 @@
 <template lang="pug">
-  div#app
-    t-list
-    t-detail
+div#app
+  t-list
+  t-detail
 </template>
 
 <script>
@@ -29,9 +29,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  // margin-top: 60px;
   display: flex;
-  // flex-wrap: wrap;
   min-height: 100vh;
   min-width: 610px;
   max-width: 1200px;

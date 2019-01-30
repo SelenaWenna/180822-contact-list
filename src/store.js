@@ -29,7 +29,7 @@ export default new Vuex.Store({
           commit('SETclients', response.data);
         })
         .catch(function (error) {
-          console.log(error);
+          console.error(error);
         });
     },
     SETclientCurrentId: ({commit}, newIndex) => {
