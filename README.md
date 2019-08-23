@@ -1,5 +1,4 @@
-# testtask_08
-Live demo: https://selenawenna.github.io/works/testtask_08/
+# Contact list
 
 ## Project setup
 ```
